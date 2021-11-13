@@ -8,8 +8,10 @@ let points = [{ x: 35, y: 16 }, { x: 30, y: 71 }, { x: 28, y: 0 }, { x: 19, y: 1
 
 // Call the filter function with a test that eliminates any points that have x=0 or y=0
 points = points.filter(point => point.x > 0 && point.y > 0);
-// Transform each point to its distance from the origin based on the euclidean distanc
+
+// Transform each point to its distance from the origin based on the euclidean distance
 let euclideanDistance = points.map(point => Math.sqrt(Math.pow(point.x, 2) + Math.pow(point.y, 2)));
+
 // Find the maximum among these distances using the reduce function and store it in maxDist
 let maxDist = euclideanDistance.reduce((previousValue, currentValue) => previousValue > currentValue ? previousValue : currentValue);
 
